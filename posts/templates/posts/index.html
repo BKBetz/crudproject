@@ -1,0 +1,8 @@
+{% extends 'posts/layout.html' %}
+
+{% block content %}
+  <h2>{{ title }}</h2>
+    {% for post in posts %}
+        <p> <a href='/posts/details/{{ post.id }}'>{{ post.title }}</a></p>
+    {% endfor %}
+{% endblock %}

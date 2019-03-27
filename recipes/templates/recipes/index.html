@@ -1,0 +1,15 @@
+{% extends 'recipes/layout.html' %}
+{% block content %}
+    <h2>All Recipes</h2>
+    <a href="/recipes/add">Create new recipe</a>
+    <p></p>
+    <table style="width: 300px;">
+    {% for recipe in recipes %}
+        <tr>
+            <td><a href="/recipes/details/{{ recipe.id }}" class="recipe-title">{{ recipe.title }}</a></td>
+            <td><a href="/recipes/edit/{{ recipe.id }}">Edit</a> </td>
+            <td><a href="/recipes/delete/{{ recipe.id }}">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
