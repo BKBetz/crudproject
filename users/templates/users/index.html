@@ -1,4 +1,14 @@
 {% extends 'users/layout.html' %}
 {% block content %}
-    <h1>HOI</h1>
+<h2>All Users</h2>
+<table style="width:300px; text-align: left;">
+    <th>User</th>
+    <th>Email</th>
+    {% for user in users %}
+    <tr>
+        <td><a href="/users/details/{{user.id}}">{{user.user_name}}</a></td>
+        <td>{{user.email}}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}

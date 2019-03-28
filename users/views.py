@@ -12,3 +12,14 @@ def index(request):
         'users': users
     }
     return render(request, 'users/index.html', context)
+
+
+def details(request, id):
+
+    user = User.objects.get(id=id)
+
+    context = {
+        'user': user
+    }
+
+    return render(request, 'users/details.html', context)
