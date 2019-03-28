@@ -13,7 +13,7 @@ def index(request):
         'recipes': recipes
     }
 
-    return HttpResponse(render(request, 'recipes/index.html', context))
+    return render(request, 'recipes/index.html', context)
 
 
 def details(request, id):
@@ -24,14 +24,14 @@ def details(request, id):
         'recipe': recipe
     }
 
-    return HttpResponse(render(request, 'recipes/details.html', context))
+    return render(request, 'recipes/details.html', context)
 
 
 def add(request):
 
     form = RecipeForm(request.POST)
 
-    return HttpResponse(render(request, 'recipes/add.html', {'form': form}))
+    return render(request, 'recipes/add.html', {'form': form})
 
 
 def create(request):
@@ -47,7 +47,7 @@ def create(request):
                 'recipes': recipes
             }
 
-            return HttpResponse(render(request, 'recipes/index.html', context))
+            return render(request, 'recipes/index.html', context)
 
     else:
         return HttpResponse('error')
@@ -60,7 +60,7 @@ def edit(request, id):
         'recipe': recipe
     }
 
-    return HttpResponse(render(request, 'recipes/edit.html', context))
+    return render(request, 'recipes/edit.html', context)
 
 
 def delete(request, id):
@@ -71,4 +71,4 @@ def delete(request, id):
         'recipe': recipe
     }
 
-    return HttpResponse(render(request, 'recipes/delete.html', context))
+    return render(request, 'recipes/delete.html', context)
